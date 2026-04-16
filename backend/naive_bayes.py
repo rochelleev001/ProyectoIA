@@ -37,10 +37,9 @@ class NaiveBayesClassifier:
         self.class_total_words = {}
         self.vocab_size = 0
 
-    # ------------------------------------------------------------------
+    #---------------
     # ENTRENAMIENTO
-    # ------------------------------------------------------------------
-
+    #---------------
     def build_vocabulary(self, documents: list) -> set:
         """
         Construye el vocabulario (Bag of Words) a partir del corpus.
@@ -72,19 +71,19 @@ class NaiveBayesClassifier:
             documents (list): Lista de listas de tokens preprocesados.
             labels (list): Lista de etiquetas de clase correspondientes.
         """
-        # Construir vocabulario
+        # construir vocabulario
         self.vocabulary = self.build_vocabulary(documents)
         self.vocab_size = len(self.vocabulary)
         self.classes = list(set(labels))
 
         total_docs = len(documents)
 
-        # Inicializar contadores
+        # inicializar contadores
         class_doc_counts = defaultdict(int)
         self.class_word_counts = {cls: defaultdict(int) for cls in self.classes}
         self.class_total_words = defaultdict(int)
 
-        # Contar documentos y palabras por clase
+        # contar documentos y palabras por clase
         for tokens, label in zip(documents, labels):
             class_doc_counts[label] += 1
             for token in tokens:
@@ -113,9 +112,9 @@ class NaiveBayesClassifier:
                 # log para evitar underflow numérico
                 self.word_likelihoods[cls][word] = math.log((count + 1) / denominator)
 
-    # ------------------------------------------------------------------
+    # ------------------------
     # INFERENCIA
-    # ------------------------------------------------------------------
+    # ------------------------
 
     def predict_single(self, tokens: list) -> tuple:
         """
