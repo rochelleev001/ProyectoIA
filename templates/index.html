@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HelpDesk AI — Sistema de Tickets Inteligente</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body>
+
+  <!-- ──────── HEADER ──────── -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-icon">⬡</span>
+        <div class="logo-text">
+          <span class="logo-name">HelpDesk<strong>AI</strong></span>
+          <span class="logo-sub">Powered by Naïve Bayes</span>
+        </div>
+      </div>
+      <nav class="header-nav">
+        <button class="nav-btn active" onclick="showView('ticket')">Nueva Solicitud</button>
+        <button class="nav-btn" onclick="showView('metrics')">Métricas del Modelo</button>
+      </nav>
+      <div class="header-badge">
+        <span class="badge-dot" id="statusDot"></span>
+        <span id="statusText">Verificando...</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ──────── VISTA: TICKET ──────── -->
+  <main id="view-ticket" class="view active">
+    <div class="page-layout">
+
+      <!-- PANEL IZQUIERDO: Formulario -->
+      <section class="form-panel">
+        <div class="panel-header">
+          <h1 class="panel-title">Nueva Solicitud de Soporte</h1>
+          <p class="panel-subtitle">Describe tu problema y el sistema lo clasificará automáticamente</p>
+        </div>
+
+        <form id="ticketForm" class="ticket-form" onsubmit="return false;">
+          <div class="form-group">
+            <label for="subject">Asunto</label>
+            <input
+              type="text"
+              id="subject"
+              placeholder="Ej: No puedo acceder a mi cuenta"
+              autocomplete="off"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="description">Descripción del Problema <span class="required">*</span></label>
+            <textarea
+              id="description"
+              rows="7"
+              placeholder="Describe tu solicitud con el mayor detalle posible…"
+              required
+            ></textarea>
+            <div class="char-counter"><span id="charCount">0</span> caracteres</div>
+          </div>
+
+          <!-- EJEMPLOS RÁPIDOS -->
+          <div class="quick-examples">
+            <p class="examples-label">Ejemplos rápidos:</p>
+            <div class="examples-chips">
+              <button type="button" class="chip" onclick="fillExample('order')">📦 Orden</button>
+              <button type="button" class="chip" onclick="fillExample('billing')">💳 Facturación</button>
+              <button type="button" class="chip" onclick="fillExample('shipping')">🚚 Envío</button>
+              <button type="button" class="chip" onclick="fillExample('refund')">↩️ Reembolso</button>
+              <button type="button" class="chip" onclick="fillExample('account')">👤 Cuenta</button>
+            </div>
+          </div>
+
+          <button type="button" class="submit-btn" id="submitBtn" onclick="submitTicket()">
+            <span class="btn-text">Clasificar Solicitud</span>
+            <span class="btn-icon">→</span>
+          </button>
+        </form>
+      </section>
+
+      <!-- PANEL DERECHO: Resultado -->
+      <section class="result-panel" id="resultPanel">
+        <div class="result-empty" id="resultEmpty">
+          <div class="empty-icon">🤖</div>
+          <p class="empty-title">Esperando clasificación</p>
+          <p class="empty-sub">El resultado aparecerá aquí</p>
+        </div>
+
+        <!-- Resultado de predicción -->
+        <div class="result-content hidden" id="resultContent">
+
+          <!-- Ticket ID -->
+          <div class="ticket-id-bar">
+            <span class="ticket-id-label">ID de Ticket</span>
+            <span class="ticket-id-value" id="ticketIdDisplay">—</span>
+            <span class="ticket-timestamp" id="ticketTimestamp">—</span>
+          </div>
+
+          <!-- Categoría predicha -->
+          <div class="prediction-hero">
+            <div class="prediction-label">Categoría Detectada</div>
+            <div class="prediction-category" id="predictedCategory">—</div>
+            <div class="prediction-description" id="categoryDescription">—</div>
+          </div>
+
+          <!-- Barras de confianza -->
+          <div class="confidence-section">
+            <h3 class="confidence-title">Distribución de Probabilidades</h3>
+            <div id="confidenceBars" class="confidence-bars"></div>
+          </div>
+
+          <!-- Info adicional -->
+          <div class="ticket-meta">
+            <div class="meta-item">
+              <span class="meta-label">Tokens procesados</span>
+              <span class="meta-value" id="tokensCount">—</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Algoritmo</span>
+              <span class="meta-value">Naïve Bayes Multinomial</span>
+            </div>
+          </div>
+
+          <!-- Botón nueva solicitud -->
+          <button class="new-ticket-btn" onclick="resetForm()">+ Nueva Solicitud</button>
+        </div>
+
+        <!-- Error -->
+        <div class="result-error hidden" id="resultError">
+          <div class="error-icon">⚠️</div>
+          <p class="error-msg" id="errorMsg">Error al clasificar.</p>
+          <button class="retry-btn" onclick="retrySubmit()">Reintentar</button>
+        </div>
+
+      </section>
+    </div>
+  </main>
+
+
+  <!-- ──────── VISTA: MÉTRICAS ──────── -->
+  <main id="view-metrics" class="view hidden">
+    <div class="metrics-page">
+      <div class="metrics-header">
+        <h2 class="metrics-title">Métricas de Evaluación del Modelo</h2>
+        <p class="metrics-sub">Resultados de K-Folds Cross Validation (K=5) implementado desde cero</p>
+      </div>
+
+      <div id="metricsLoading" class="metrics-loading">
+        <div class="spinner"></div>
+        <p>Cargando métricas...</p>
+      </div>
+
+      <div id="metricsContent" class="hidden">
+
+        <!-- Cards globales -->
+        <div class="global-cards" id="globalCards"></div>
+
+        <!-- Métricas por clase -->
+        <div class="class-metrics-section">
+          <h3 class="section-title">Precisión, Recall y F1-Score por Clase</h3>
+          <div class="class-metrics-table-wrapper">
+            <table class="class-metrics-table" id="classMetricsTable">
+              <thead>
+                <tr>
+                  <th>Clase</th>
+                  <th>Precisión</th>
+                  <th>Recall</th>
+                  <th>F1-Score</th>
+                </tr>
+              </thead>
+              <tbody id="classMetricsBody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- K-Folds resultados por fold -->
+        <div class="folds-section">
+          <h3 class="section-title">Resultados por Fold</h3>
+          <div class="folds-grid" id="foldsGrid"></div>
+        </div>
+
+        <!-- Matriz de Confusión -->
+        <div class="confusion-section">
+          <h3 class="section-title">Matriz de Confusión (Global)</h3>
+          <p class="confusion-hint">Las filas representan la clase real, las columnas la clase predicha. La diagonal muestra clasificaciones correctas.</p>
+          <div class="confusion-wrapper">
+            <div id="confusionMatrix" class="confusion-matrix"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ──────── FOOTER ──────── -->
+  <footer class="site-footer">
+    <p>Universidad Rafael Landívar · Facultad de Ingeniería · Inteligencia Artificial 2026</p>
+  </footer>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
