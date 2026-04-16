@@ -1,0 +1,1527 @@
+{
+  "k": 5,
+  "fold_results": [
+    {
+      "fold": 1,
+      "accuracy": 0.992,
+      "macro_f1": 0.9923,
+      "per_class": {
+        "ACCOUNT": {
+          "precision": 0.9967,
+          "recall": 0.9983,
+          "f1_score": 0.9975,
+          "tp": 1196,
+          "fp": 4,
+          "fn": 2
+        },
+        "CANCEL": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "tp": 190,
+          "fp": 0,
+          "fn": 0
+        },
+        "CONTACT": {
+          "precision": 1.0,
+          "recall": 0.9975,
+          "f1_score": 0.9987,
+          "tp": 399,
+          "fp": 0,
+          "fn": 1
+        },
+        "DELIVERY": {
+          "precision": 0.9816,
+          "recall": 0.9348,
+          "f1_score": 0.9576,
+          "tp": 373,
+          "fp": 7,
+          "fn": 26
+        },
+        "FEEDBACK": {
+          "precision": 1.0,
+          "recall": 0.9975,
+          "f1_score": 0.9987,
+          "tp": 399,
+          "fp": 0,
+          "fn": 1
+        },
+        "INVOICE": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "tp": 400,
+          "fp": 0,
+          "fn": 0
+        },
+        "ORDER": {
+          "precision": 0.9729,
+          "recall": 0.9912,
+          "f1_score": 0.982,
+          "tp": 791,
+          "fp": 22,
+          "fn": 7
+        },
+        "PAYMENT": {
+          "precision": 0.9975,
+          "recall": 0.995,
+          "f1_score": 0.9962,
+          "tp": 398,
+          "fp": 1,
+          "fn": 2
+        },
+        "REFUND": {
+          "precision": 1.0,
+          "recall": 0.9983,
+          "f1_score": 0.9992,
+          "tp": 598,
+          "fp": 0,
+          "fn": 1
+        },
+        "SHIPPING": {
+          "precision": 0.9775,
+          "recall": 0.9924,
+          "f1_score": 0.9849,
+          "tp": 391,
+          "fp": 9,
+          "fn": 3
+        },
+        "SUBSCRIPTION": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "tp": 200,
+          "fp": 0,
+          "fn": 0
+        }
+      },
+      "confusion_matrix": {
+        "ACCOUNT": {
+          "ACCOUNT": 1196,
+          "CANCEL": 0,
+          "CONTACT": 0,
+          "DELIVERY": 0,
+          "FEEDBACK": 0,
+          "INVOICE": 0,
+          "ORDER": 1,
+          "PAYMENT": 1,
+          "REFUND": 0,
+          "SHIPPING": 0,
+          "SUBSCRIPTION": 0
+        },
+        "CANCEL": {
+          "ACCOUNT": 0,
+          "CANCEL": 190,
+          "CONTACT": 0,
+          "DELIVERY": 0,
+          "FEEDBACK": 0,
+          "INVOICE": 0,
+          "ORDER": 0,
+          "PAYMENT": 0,
+          "REFUND": 0,
+          "SHIPPING": 0,
+          "SUBSCRIPTION": 0
+        },
+        "CONTACT": {
+          "ACCOUNT": 0,
+          "CANCEL": 0,
+          "CONTACT": 399,
+          "DELIVERY": 0,
+          "FEEDBACK": 0,
+          "INVOICE": 0,
+          "ORDER": 1,
+          "PAYMENT": 0,
+          "REFUND": 0,
+          "SHIPPING": 0,
+          "SUBSCRIPTION": 0
+        },
+        "DELIVERY": {
+          "ACCOUNT": 0,
+          "CANCEL": 0,
+          "CONTACT": 0,
+          "DELIVERY": 373,
+          "FEEDBACK": 0,
+          "INVOICE": 0,
+          "ORDER": 18,
+          "PAYMENT": 0,
+          "REFUND": 0,
+          "SHIPPING": 8,
+          "SUBSCRIPTION": 0
+        },
+        "FEEDBACK": {
+          "ACCOUNT": 0,
+          "CANCEL": 0,
+          "CONTACT": 0,
+          "DELIVERY": 0,
+          "FEEDBACK": 399,
+          "INVOICE": 0,
+          "ORDER": 1,
+          "PAYMENT": 0,
+          "REFUND": 0,
+          "SHIPPING": 0,
+          "SUBSCRIPTION": 0
+        },
+        "INVOICE": {
+          "ACCOUNT": 0,
+          "CANCEL": 0,
+          "CONTACT": 0,
+          "DELIVERY": 0,
+          "FEEDBACK": 0,
+          "INVOICE": 400,
+          "ORDER": 0,
+          "PAYMENT": 0,
+          "REFUND": 0,
+          "SHIPPING": 0,
+          "SUBSCRIPTION": 0
+        },
+        "ORDER": {
+          "ACCOUNT": 0,
+          "CANCEL": 0,
+          "CONTACT": 0,
+          "DELIVERY": 6,
+          "FEEDBACK": 0,
+          "INVOICE": 0,
+          "ORDER": 791,
+          "PAYMENT": 0,
+          "REFUND": 0,
+          "SHIPPING": 1,
+          "SUBSCRIPTION": 0
+        },
+        "PAYMENT": {
+          "ACCOUNT": 1,
+          "CANCEL": 0,
+          "CONTACT": 0,
+          "DELIVERY": 0,
+          "FEEDBACK": 0,
+          "INVOICE": 0,
+          "ORDER": 1,
+          "PAYMENT": 398,
+          "REFUND": 0,
+          "SHIPPING": 0,
+          "SUBSCRIPTION": 0
+        },
+        "REFUND": {
+          "ACCOUNT": 0,
+          "CANCEL": 0,
+          "CONTACT": 0,
+          "DELIVERY": 1,
+          "FEEDBACK": 0,
+          "INVOICE": 0,
+          "ORDER": 0,
+          "PAYMENT": 0,
+          "REFUND": 598,
+          "SHIPPING": 0,
+          "SUBSCRIPTION": 0
+        },
+        "SHIPPING": {
+          "ACCOUNT": 3,
+          "CANCEL": 0,
+          "CONTACT": 0,
+          "DELIVERY": 0,
+          "FEEDBACK": 0,
+          "INVOICE": 0,
+          "ORDER": 0,
+          "PAYMENT": 0,
+          "REFUND": 0,
+          "SHIPPING": 391,
+          "SUBSCRIPTION": 0
+        },
+        "SUBSCRIPTION": {
+          "ACCOUNT": 0,
+          "CANCEL": 0,
+          "CONTACT": 0,
+          "DELIVERY": 0,
+          "FEEDBACK": 0,
+          "INVOICE": 0,
+          "ORDER": 0,
+          "PAYMENT": 0,
+          "REFUND": 0,
+          "SHIPPING": 0,
+          "SUBSCRIPTION": 200
+        }
+      },
+      "test_size": 5378,
+      "train_size": 21494
+    },
+    {
+      "fold": 2,
+      "accuracy": 0.9924,
+      "macro_f1": 0.9923,
+      "per_class": {
+        "ACCOUNT": {
+          "precision": 0.9992,
+          "recall": 0.9975,
+          "f1_score": 0.9983,
+          "tp": 1194,
+          "fp": 1,
+          "fn": 3
+        },
+        "CANCEL": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "tp": 190,
+          "fp": 0,
+          "fn": 0
+        },
+        "CONTACT": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "tp": 400,
+          "fp": 0,
+          "fn": 0
+        },
+        "DELIVERY": {
+          "precision": 0.9791,
+          "recall": 0.9373,
+          "f1_score": 0.9577,
+          "tp": 374,
+          "fp": 8,
+          "fn": 25
+        },
+        "FEEDBACK": {
+          "precision": 0.9926,
+          "recall": 1.0,
+          "f1_score": 0.9963,
+          "tp": 400,
+          "fp": 3,
+          "fn": 0
+        },
+        "INVOICE": {
+          "precision": 1.0,
+          "recall": 0.99,
+          "f1_score": 0.995,
+          "tp": 396,
+          "fp": 0,
+          "fn": 4
+        },
+        "ORDER": {
+          "precision": 0.9802,
+          "recall": 0.9925,
+          "f1_score": 0.9863,
+          "tp": 792,
+          "fp": 16,
+          "fn": 6
+        },
+        "PAYMENT": {
+          "precision": 0.9926,
+          "recall": 1.0,
+          "f1_score": 0.9963,
+          "tp": 400,
+          "fp": 3,
+          "fn": 0
+        },
+        "REFUND": {
+          "precision": 1.0,
+          "recall": 0.995,
+          "f1_score": 0.9975,
+          "tp": 596,
+          "fp": 0,
+          "fn": 3
+        },
+        "SHIPPING": {
+          "precision": 0.9752,
+          "recall": 1.0,
+          "f1_score": 0.9875,
+          "tp": 394,
+          "fp": 10,
+          "fn": 0
+        },
+        "SUBSCRIPTION": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "tp": 200,
+          "fp": 0,
+          "fn": 0
+        }
+      },
+      "confusion_matrix": {
+        "ACCOUNT": {
+          "ACCOUNT": 1194,
+          "CANCEL": 0,
+          "CONTACT": 0,
+          "DELIVERY": 0,
+          "FEEDBACK": 0,
+          "INVOICE": 0,
+          "ORDER": 0,
+          "PAYMENT": 3,
+          "REFUND": 0,
+          "SHIPPING": 0,
+          "SUBSCRIPTION": 0
+        },
+        "CANCEL": {
+          "ACCOUNT": 0,
+          "CANCEL": 190,
+          "CONTACT": 0,
+          "DELIVERY": 0,
+          "FEEDBACK": 0,
+          "INVOICE": 0,
+          "ORDER": 0,
+          "PAYMENT": 0,
+          "REFUND": 0,
+          "SHIPPING": 0,
+          "SUBSCRIPTION": 0
+        },
+        "CONTACT": {
+          "ACCOUNT": 0,
+          "CANCEL": 0,
+          "CONTACT": 400,
+          "DELIVERY": 0,
+          "FEEDBACK": 0,
+          "INVOICE": 0,
+          "ORDER": 0,
+          "PAYMENT": 0,
+          "REFUND": 0,
+          "SHIPPING": 0,
+          "SUBSCRIPTION": 0
+        },
+        "DELIVERY": {
+          "ACCOUNT": 0,
+          "CANCEL": 0,
+          "CONTACT": 0,
+          "DELIVERY": 374,
+          "FEEDBACK": 0,
+          "INVOICE": 0,
+          "ORDER": 16,
+          "PAYMENT": 0,
+          "REFUND": 0,
+          "SHIPPING": 9,
+          "SUBSCRIPTION": 0
+        },
+        "FEEDBACK": {
+          "ACCOUNT": 0,
+          "CANCEL": 0,
+          "CONTACT": 0,
+          "DELIVERY": 0,
+          "FEEDBACK": 400,
+          "INVOICE": 0,
+          "ORDER": 0,
+          "PAYMENT": 0,
+          "REFUND": 0,
+          "SHIPPING": 0,
+          "SUBSCRIPTION": 0
+        },
+        "INVOICE": {
+          "ACCOUNT": 0,
+          "CANCEL": 0,
+          "CONTACT": 0,
+          "DELIVERY": 2,
+          "FEEDBACK": 2,
+          "INVOICE": 396,
+          "ORDER": 0,
+          "PAYMENT": 0,
+          "REFUND": 0,
+          "SHIPPING": 0,
+          "SUBSCRIPTION": 0
+        },
+        "ORDER": {
+          "ACCOUNT": 1,
+          "CANCEL": 0,
+          "CONTACT": 0,
+          "DELIVERY": 3,
+          "FEEDBACK": 1,
+          "INVOICE": 0,
+          "ORDER": 792,
+          "PAYMENT": 0,
+          "REFUND": 0,
+          "SHIPPING": 1,
+          "SUBSCRIPTION": 0
+        },
+        "PAYMENT": {
+          "ACCOUNT": 0,
+          "CANCEL": 0,
+          "CONTACT": 0,
+          "DELIVERY": 0,
+          "FEEDBACK": 0,
+          "INVOICE": 0,
+          "ORDER": 0,
+          "PAYMENT": 400,
+          "REFUND": 0,
+          "SHIPPING": 0,
+          "SUBSCRIPTION": 0
+        },
+        "REFUND": {
+          "ACCOUNT": 0,
+          "CANCEL": 0,
+          "CONTACT": 0,
+          "DELIVERY": 3,
+          "FEEDBACK": 0,
+          "INVOICE": 0,
+          "ORDER": 0,
+          "PAYMENT": 0,
+          "REFUND": 596,
+          "SHIPPING": 0,
+          "SUBSCRIPTION": 0
+        },
+        "SHIPPING": {
+          "ACCOUNT": 0,
+          "CANCEL": 0,
+          "CONTACT": 0,
+          "DELIVERY": 0,
+          "FEEDBACK": 0,
+          "INVOICE": 0,
+          "ORDER": 0,
+          "PAYMENT": 0,
+          "REFUND": 0,
+          "SHIPPING": 394,
+          "SUBSCRIPTION": 0
+        },
+        "SUBSCRIPTION": {
+          "ACCOUNT": 0,
+          "CANCEL": 0,
+          "CONTACT": 0,
+          "DELIVERY": 0,
+          "FEEDBACK": 0,
+          "INVOICE": 0,
+          "ORDER": 0,
+          "PAYMENT": 0,
+          "REFUND": 0,
+          "SHIPPING": 0,
+          "SUBSCRIPTION": 200
+        }
+      },
+      "test_size": 5377,
+      "train_size": 21495
+    },
+    {
+      "fold": 3,
+      "accuracy": 0.9905,
+      "macro_f1": 0.99,
+      "per_class": {
+        "ACCOUNT": {
+          "precision": 0.9992,
+          "recall": 1.0,
+          "f1_score": 0.9996,
+          "tp": 1197,
+          "fp": 1,
+          "fn": 0
+        },
+        "CANCEL": {
+          "precision": 1.0,
+          "recall": 0.9947,
+          "f1_score": 0.9974,
+          "tp": 189,
+          "fp": 0,
+          "fn": 1
+        },
+        "CONTACT": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "tp": 400,
+          "fp": 0,
+          "fn": 0
+        },
+        "DELIVERY": {
+          "precision": 0.9758,
+          "recall": 0.9098,
+          "f1_score": 0.9416,
+          "tp": 363,
+          "fp": 9,
+          "fn": 36
+        },
+        "FEEDBACK": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "tp": 399,
+          "fp": 0,
+          "fn": 0
+        },
+        "INVOICE": {
+          "precision": 1.0,
+          "recall": 0.99,
+          "f1_score": 0.995,
+          "tp": 396,
+          "fp": 0,
+          "fn": 4
+        },
+        "ORDER": {
+          "precision": 0.9694,
+          "recall": 0.9937,
+          "f1_score": 0.9814,
+          "tp": 793,
+          "fp": 25,
+          "fn": 5
+        },
+        "PAYMENT": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "tp": 400,
+          "fp": 0,
+          "fn": 0
+        },
+        "REFUND": {
+          "precision": 0.9966,
+          "recall": 0.995,
+          "f1_score": 0.9958,
+          "tp": 595,
+          "fp": 2,
+          "fn": 3
+        },
+        "SHIPPING": {
+          "precision": 0.9656,
+          "recall": 0.9975,
+          "f1_score": 0.9813,
+          "tp": 393,
+          "fp": 14,
+          "fn": 1
+        },
+        "SUBSCRIPTION": {
+          "precision": 1.0,
+          "recall": 0.995,
+          "f1_score": 0.9975,
+          "tp": 199,
+          "fp": 0,
+          "fn": 1
+        }
+      },
+      "confusion_matrix": {
+        "ACCOUNT": {
+          "ACCOUNT": 1197,
+          "CANCEL": 0,
+          "CONTACT": 0,
+          "DELIVERY": 0,
+          "FEEDBACK": 0,
+          "INVOICE": 0,
+          "ORDER": 0,
+          "PAYMENT": 0,
+          "REFUND": 0,
+          "SHIPPING": 0,
+          "SUBSCRIPTION": 0
+        },
+        "CANCEL": {
+          "ACCOUNT": 0,
+          "CANCEL": 189,
+          "CONTACT": 0,
+          "DELIVERY": 1,
+          "FEEDBACK": 0,
+          "INVOICE": 0,
+          "ORDER": 0,
+          "PAYMENT": 0,
+          "REFUND": 0,
+          "SHIPPING": 0,
+          "SUBSCRIPTION": 0
+        },
+        "CONTACT": {
+          "ACCOUNT": 0,
+          "CANCEL": 0,
+          "CONTACT": 400,
+          "DELIVERY": 0,
+          "FEEDBACK": 0,
+          "INVOICE": 0,
+          "ORDER": 0,
+          "PAYMENT": 0,
+          "REFUND": 0,
+          "SHIPPING": 0,
+          "SUBSCRIPTION": 0
+        },
+        "DELIVERY": {
+          "ACCOUNT": 0,
+          "CANCEL": 0,
+          "CONTACT": 0,
+          "DELIVERY": 363,
+          "FEEDBACK": 0,
+          "INVOICE": 0,
+          "ORDER": 23,
+          "PAYMENT": 0,
+          "REFUND": 0,
+          "SHIPPING": 13,
+          "SUBSCRIPTION": 0
+        },
+        "FEEDBACK": {
+          "ACCOUNT": 0,
+          "CANCEL": 0,
+          "CONTACT": 0,
+          "DELIVERY": 0,
+          "FEEDBACK": 399,
+          "INVOICE": 0,
+          "ORDER": 0,
+          "PAYMENT": 0,
+          "REFUND": 0,
+          "SHIPPING": 0,
+          "SUBSCRIPTION": 0
+        },
+        "INVOICE": {
+          "ACCOUNT": 0,
+          "CANCEL": 0,
+          "CONTACT": 0,
+          "DELIVERY": 3,
+          "FEEDBACK": 0,
+          "INVOICE": 396,
+          "ORDER": 0,
+          "PAYMENT": 0,
+          "REFUND": 1,
+          "SHIPPING": 0,
+          "SUBSCRIPTION": 0
+        },
+        "ORDER": {
+          "ACCOUNT": 1,
+          "CANCEL": 0,
+          "CONTACT": 0,
+          "DELIVERY": 2,
+          "FEEDBACK": 0,
+          "INVOICE": 0,
+          "ORDER": 793,
+          "PAYMENT": 0,
+          "REFUND": 1,
+          "SHIPPING": 1,
+          "SUBSCRIPTION": 0
+        },
+        "PAYMENT": {
+          "ACCOUNT": 0,
+          "CANCEL": 0,
+          "CONTACT": 0,
+          "DELIVERY": 0,
+          "FEEDBACK": 0,
+          "INVOICE": 0,
+          "ORDER": 0,
+          "PAYMENT": 400,
+          "REFUND": 0,
+          "SHIPPING": 0,
+          "SUBSCRIPTION": 0
+        },
+        "REFUND": {
+          "ACCOUNT": 0,
+          "CANCEL": 0,
+          "CONTACT": 0,
+          "DELIVERY": 3,
+          "FEEDBACK": 0,
+          "INVOICE": 0,
+          "ORDER": 0,
+          "PAYMENT": 0,
+          "REFUND": 595,
+          "SHIPPING": 0,
+          "SUBSCRIPTION": 0
+        },
+        "SHIPPING": {
+          "ACCOUNT": 0,
+          "CANCEL": 0,
+          "CONTACT": 0,
+          "DELIVERY": 0,
+          "FEEDBACK": 0,
+          "INVOICE": 0,
+          "ORDER": 1,
+          "PAYMENT": 0,
+          "REFUND": 0,
+          "SHIPPING": 393,
+          "SUBSCRIPTION": 0
+        },
+        "SUBSCRIPTION": {
+          "ACCOUNT": 0,
+          "CANCEL": 0,
+          "CONTACT": 0,
+          "DELIVERY": 0,
+          "FEEDBACK": 0,
+          "INVOICE": 0,
+          "ORDER": 1,
+          "PAYMENT": 0,
+          "REFUND": 0,
+          "SHIPPING": 0,
+          "SUBSCRIPTION": 199
+        }
+      },
+      "test_size": 5375,
+      "train_size": 21497
+    },
+    {
+      "fold": 4,
+      "accuracy": 0.9903,
+      "macro_f1": 0.9899,
+      "per_class": {
+        "ACCOUNT": {
+          "precision": 0.9975,
+          "recall": 0.9983,
+          "f1_score": 0.9979,
+          "tp": 1195,
+          "fp": 3,
+          "fn": 2
+        },
+        "CANCEL": {
+          "precision": 1.0,
+          "recall": 0.9895,
+          "f1_score": 0.9947,
+          "tp": 188,
+          "fp": 0,
+          "fn": 2
+        },
+        "CONTACT": {
+          "precision": 0.9975,
+          "recall": 0.995,
+          "f1_score": 0.9962,
+          "tp": 398,
+          "fp": 1,
+          "fn": 2
+        },
+        "DELIVERY": {
+          "precision": 0.979,
+          "recall": 0.9348,
+          "f1_score": 0.9564,
+          "tp": 373,
+          "fp": 8,
+          "fn": 26
+        },
+        "FEEDBACK": {
+          "precision": 0.995,
+          "recall": 0.9975,
+          "f1_score": 0.9962,
+          "tp": 398,
+          "fp": 2,
+          "fn": 1
+        },
+        "INVOICE": {
+          "precision": 0.995,
+          "recall": 0.995,
+          "f1_score": 0.995,
+          "tp": 398,
+          "fp": 2,
+          "fn": 2
+        },
+        "ORDER": {
+          "precision": 0.9789,
+          "recall": 0.99,
+          "f1_score": 0.9844,
+          "tp": 789,
+          "fp": 17,
+          "fn": 8
+        },
+        "PAYMENT": {
+          "precision": 0.9975,
+          "recall": 0.9925,
+          "f1_score": 0.995,
+          "tp": 396,
+          "fp": 1,
+          "fn": 3
+        },
+        "REFUND": {
+          "precision": 0.995,
+          "recall": 0.99,
+          "f1_score": 0.9925,
+          "tp": 592,
+          "fp": 3,
+          "fn": 6
+        },
+        "SHIPPING": {
+          "precision": 0.9657,
+          "recall": 1.0,
+          "f1_score": 0.9825,
+          "tp": 394,
+          "fp": 14,
+          "fn": 0
+        },
+        "SUBSCRIPTION": {
+          "precision": 0.995,
+          "recall": 1.0,
+          "f1_score": 0.9975,
+          "tp": 200,
+          "fp": 1,
+          "fn": 0
+        }
+      },
+      "confusion_matrix": {
+        "ACCOUNT": {
+          "ACCOUNT": 1195,
+          "CANCEL": 0,
+          "CONTACT": 1,
+          "DELIVERY": 0,
+          "FEEDBACK": 0,
+          "INVOICE": 0,
+          "ORDER": 0,
+          "PAYMENT": 1,
+          "REFUND": 0,
+          "SHIPPING": 0,
+          "SUBSCRIPTION": 0
+        },
+        "CANCEL": {
+          "ACCOUNT": 0,
+          "CANCEL": 188,
+          "CONTACT": 0,
+          "DELIVERY": 0,
+          "FEEDBACK": 0,
+          "INVOICE": 1,
+          "ORDER": 1,
+          "PAYMENT": 0,
+          "REFUND": 0,
+          "SHIPPING": 0,
+          "SUBSCRIPTION": 0
+        },
+        "CONTACT": {
+          "ACCOUNT": 0,
+          "CANCEL": 0,
+          "CONTACT": 398,
+          "DELIVERY": 0,
+          "FEEDBACK": 2,
+          "INVOICE": 0,
+          "ORDER": 0,
+          "PAYMENT": 0,
+          "REFUND": 0,
+          "SHIPPING": 0,
+          "SUBSCRIPTION": 0
+        },
+        "DELIVERY": {
+          "ACCOUNT": 0,
+          "CANCEL": 0,
+          "CONTACT": 0,
+          "DELIVERY": 373,
+          "FEEDBACK": 0,
+          "INVOICE": 0,
+          "ORDER": 14,
+          "PAYMENT": 0,
+          "REFUND": 0,
+          "SHIPPING": 12,
+          "SUBSCRIPTION": 0
+        },
+        "FEEDBACK": {
+          "ACCOUNT": 0,
+          "CANCEL": 0,
+          "CONTACT": 0,
+          "DELIVERY": 0,
+          "FEEDBACK": 398,
+          "INVOICE": 0,
+          "ORDER": 0,
+          "PAYMENT": 0,
+          "REFUND": 0,
+          "SHIPPING": 1,
+          "SUBSCRIPTION": 0
+        },
+        "INVOICE": {
+          "ACCOUNT": 0,
+          "CANCEL": 0,
+          "CONTACT": 0,
+          "DELIVERY": 0,
+          "FEEDBACK": 0,
+          "INVOICE": 398,
+          "ORDER": 1,
+          "PAYMENT": 0,
+          "REFUND": 0,
+          "SHIPPING": 1,
+          "SUBSCRIPTION": 0
+        },
+        "ORDER": {
+          "ACCOUNT": 1,
+          "CANCEL": 0,
+          "CONTACT": 0,
+          "DELIVERY": 3,
+          "FEEDBACK": 0,
+          "INVOICE": 1,
+          "ORDER": 789,
+          "PAYMENT": 0,
+          "REFUND": 3,
+          "SHIPPING": 0,
+          "SUBSCRIPTION": 0
+        },
+        "PAYMENT": {
+          "ACCOUNT": 2,
+          "CANCEL": 0,
+          "CONTACT": 0,
+          "DELIVERY": 1,
+          "FEEDBACK": 0,
+          "INVOICE": 0,
+          "ORDER": 0,
+          "PAYMENT": 396,
+          "REFUND": 0,
+          "SHIPPING": 0,
+          "SUBSCRIPTION": 0
+        },
+        "REFUND": {
+          "ACCOUNT": 0,
+          "CANCEL": 0,
+          "CONTACT": 0,
+          "DELIVERY": 4,
+          "FEEDBACK": 0,
+          "INVOICE": 0,
+          "ORDER": 1,
+          "PAYMENT": 0,
+          "REFUND": 592,
+          "SHIPPING": 0,
+          "SUBSCRIPTION": 1
+        },
+        "SHIPPING": {
+          "ACCOUNT": 0,
+          "CANCEL": 0,
+          "CONTACT": 0,
+          "DELIVERY": 0,
+          "FEEDBACK": 0,
+          "INVOICE": 0,
+          "ORDER": 0,
+          "PAYMENT": 0,
+          "REFUND": 0,
+          "SHIPPING": 394,
+          "SUBSCRIPTION": 0
+        },
+        "SUBSCRIPTION": {
+          "ACCOUNT": 0,
+          "CANCEL": 0,
+          "CONTACT": 0,
+          "DELIVERY": 0,
+          "FEEDBACK": 0,
+          "INVOICE": 0,
+          "ORDER": 0,
+          "PAYMENT": 0,
+          "REFUND": 0,
+          "SHIPPING": 0,
+          "SUBSCRIPTION": 200
+        }
+      },
+      "test_size": 5373,
+      "train_size": 21499
+    },
+    {
+      "fold": 5,
+      "accuracy": 0.9927,
+      "macro_f1": 0.992,
+      "per_class": {
+        "ACCOUNT": {
+          "precision": 1.0,
+          "recall": 0.9975,
+          "f1_score": 0.9987,
+          "tp": 1194,
+          "fp": 0,
+          "fn": 3
+        },
+        "CANCEL": {
+          "precision": 1.0,
+          "recall": 0.9947,
+          "f1_score": 0.9974,
+          "tp": 189,
+          "fp": 0,
+          "fn": 1
+        },
+        "CONTACT": {
+          "precision": 1.0,
+          "recall": 0.995,
+          "f1_score": 0.9975,
+          "tp": 397,
+          "fp": 0,
+          "fn": 2
+        },
+        "DELIVERY": {
+          "precision": 0.9973,
+          "recall": 0.9347,
+          "f1_score": 0.965,
+          "tp": 372,
+          "fp": 1,
+          "fn": 26
+        },
+        "FEEDBACK": {
+          "precision": 0.9901,
+          "recall": 1.0,
+          "f1_score": 0.995,
+          "tp": 399,
+          "fp": 4,
+          "fn": 0
+        },
+        "INVOICE": {
+          "precision": 1.0,
+          "recall": 0.9875,
+          "f1_score": 0.9937,
+          "tp": 394,
+          "fp": 0,
+          "fn": 5
+        },
+        "ORDER": {
+          "precision": 0.9803,
+          "recall": 0.9987,
+          "f1_score": 0.9894,
+          "tp": 796,
+          "fp": 16,
+          "fn": 1
+        },
+        "PAYMENT": {
+          "precision": 0.9901,
+          "recall": 1.0,
+          "f1_score": 0.995,
+          "tp": 399,
+          "fp": 4,
+          "fn": 0
+        },
+        "REFUND": {
+          "precision": 0.9983,
+          "recall": 1.0,
+          "f1_score": 0.9992,
+          "tp": 598,
+          "fp": 1,
+          "fn": 0
+        },
+        "SHIPPING": {
+          "precision": 0.9681,
+          "recall": 1.0,
+          "f1_score": 0.9838,
+          "tp": 394,
+          "fp": 13,
+          "fn": 0
+        },
+        "SUBSCRIPTION": {
+          "precision": 1.0,
+          "recall": 0.995,
+          "f1_score": 0.9975,
+          "tp": 198,
+          "fp": 0,
+          "fn": 1
+        }
+      },
+      "confusion_matrix": {
+        "ACCOUNT": {
+          "ACCOUNT": 1194,
+          "CANCEL": 0,
+          "CONTACT": 0,
+          "DELIVERY": 0,
+          "FEEDBACK": 0,
+          "INVOICE": 0,
+          "ORDER": 0,
+          "PAYMENT": 3,
+          "REFUND": 0,
+          "SHIPPING": 0,
+          "SUBSCRIPTION": 0
+        },
+        "CANCEL": {
+          "ACCOUNT": 0,
+          "CANCEL": 189,
+          "CONTACT": 0,
+          "DELIVERY": 0,
+          "FEEDBACK": 0,
+          "INVOICE": 0,
+          "ORDER": 1,
+          "PAYMENT": 0,
+          "REFUND": 0,
+          "SHIPPING": 0,
+          "SUBSCRIPTION": 0
+        },
+        "CONTACT": {
+          "ACCOUNT": 0,
+          "CANCEL": 0,
+          "CONTACT": 397,
+          "DELIVERY": 0,
+          "FEEDBACK": 1,
+          "INVOICE": 0,
+          "ORDER": 0,
+          "PAYMENT": 1,
+          "REFUND": 0,
+          "SHIPPING": 0,
+          "SUBSCRIPTION": 0
+        },
+        "DELIVERY": {
+          "ACCOUNT": 0,
+          "CANCEL": 0,
+          "CONTACT": 0,
+          "DELIVERY": 372,
+          "FEEDBACK": 0,
+          "INVOICE": 0,
+          "ORDER": 14,
+          "PAYMENT": 0,
+          "REFUND": 0,
+          "SHIPPING": 12,
+          "SUBSCRIPTION": 0
+        },
+        "FEEDBACK": {
+          "ACCOUNT": 0,
+          "CANCEL": 0,
+          "CONTACT": 0,
+          "DELIVERY": 0,
+          "FEEDBACK": 399,
+          "INVOICE": 0,
+          "ORDER": 0,
+          "PAYMENT": 0,
+          "REFUND": 0,
+          "SHIPPING": 0,
+          "SUBSCRIPTION": 0
+        },
+        "INVOICE": {
+          "ACCOUNT": 0,
+          "CANCEL": 0,
+          "CONTACT": 0,
+          "DELIVERY": 1,
+          "FEEDBACK": 3,
+          "INVOICE": 394,
+          "ORDER": 1,
+          "PAYMENT": 0,
+          "REFUND": 0,
+          "SHIPPING": 0,
+          "SUBSCRIPTION": 0
+        },
+        "ORDER": {
+          "ACCOUNT": 0,
+          "CANCEL": 0,
+          "CONTACT": 0,
+          "DELIVERY": 0,
+          "FEEDBACK": 0,
+          "INVOICE": 0,
+          "ORDER": 796,
+          "PAYMENT": 0,
+          "REFUND": 0,
+          "SHIPPING": 1,
+          "SUBSCRIPTION": 0
+        },
+        "PAYMENT": {
+          "ACCOUNT": 0,
+          "CANCEL": 0,
+          "CONTACT": 0,
+          "DELIVERY": 0,
+          "FEEDBACK": 0,
+          "INVOICE": 0,
+          "ORDER": 0,
+          "PAYMENT": 399,
+          "REFUND": 0,
+          "SHIPPING": 0,
+          "SUBSCRIPTION": 0
+        },
+        "REFUND": {
+          "ACCOUNT": 0,
+          "CANCEL": 0,
+          "CONTACT": 0,
+          "DELIVERY": 0,
+          "FEEDBACK": 0,
+          "INVOICE": 0,
+          "ORDER": 0,
+          "PAYMENT": 0,
+          "REFUND": 598,
+          "SHIPPING": 0,
+          "SUBSCRIPTION": 0
+        },
+        "SHIPPING": {
+          "ACCOUNT": 0,
+          "CANCEL": 0,
+          "CONTACT": 0,
+          "DELIVERY": 0,
+          "FEEDBACK": 0,
+          "INVOICE": 0,
+          "ORDER": 0,
+          "PAYMENT": 0,
+          "REFUND": 0,
+          "SHIPPING": 394,
+          "SUBSCRIPTION": 0
+        },
+        "SUBSCRIPTION": {
+          "ACCOUNT": 0,
+          "CANCEL": 0,
+          "CONTACT": 0,
+          "DELIVERY": 0,
+          "FEEDBACK": 0,
+          "INVOICE": 0,
+          "ORDER": 0,
+          "PAYMENT": 0,
+          "REFUND": 1,
+          "SHIPPING": 0,
+          "SUBSCRIPTION": 198
+        }
+      },
+      "test_size": 5369,
+      "train_size": 21503
+    }
+  ],
+  "avg_accuracy": 0.9916,
+  "avg_macro_f1": 0.9913,
+  "std_accuracy": 0.001,
+  "avg_per_class": {
+    "ACCOUNT": {
+      "precision": 0.9985,
+      "recall": 0.9983,
+      "f1_score": 0.9984
+    },
+    "CANCEL": {
+      "precision": 1.0,
+      "recall": 0.9958,
+      "f1_score": 0.9979
+    },
+    "CONTACT": {
+      "precision": 0.9995,
+      "recall": 0.9975,
+      "f1_score": 0.9985
+    },
+    "DELIVERY": {
+      "precision": 0.9826,
+      "recall": 0.9303,
+      "f1_score": 0.9557
+    },
+    "FEEDBACK": {
+      "precision": 0.9955,
+      "recall": 0.999,
+      "f1_score": 0.9972
+    },
+    "INVOICE": {
+      "precision": 0.999,
+      "recall": 0.9925,
+      "f1_score": 0.9957
+    },
+    "ORDER": {
+      "precision": 0.9763,
+      "recall": 0.9932,
+      "f1_score": 0.9847
+    },
+    "PAYMENT": {
+      "precision": 0.9955,
+      "recall": 0.9975,
+      "f1_score": 0.9965
+    },
+    "REFUND": {
+      "precision": 0.998,
+      "recall": 0.9957,
+      "f1_score": 0.9968
+    },
+    "SHIPPING": {
+      "precision": 0.9704,
+      "recall": 0.998,
+      "f1_score": 0.984
+    },
+    "SUBSCRIPTION": {
+      "precision": 0.999,
+      "recall": 0.998,
+      "f1_score": 0.9985
+    }
+  },
+  "global_confusion": {
+    "ACCOUNT": {
+      "ACCOUNT": 5976,
+      "CANCEL": 0,
+      "CONTACT": 1,
+      "DELIVERY": 0,
+      "FEEDBACK": 0,
+      "INVOICE": 0,
+      "ORDER": 1,
+      "PAYMENT": 8,
+      "REFUND": 0,
+      "SHIPPING": 0,
+      "SUBSCRIPTION": 0
+    },
+    "CANCEL": {
+      "ACCOUNT": 0,
+      "CANCEL": 946,
+      "CONTACT": 0,
+      "DELIVERY": 1,
+      "FEEDBACK": 0,
+      "INVOICE": 1,
+      "ORDER": 2,
+      "PAYMENT": 0,
+      "REFUND": 0,
+      "SHIPPING": 0,
+      "SUBSCRIPTION": 0
+    },
+    "CONTACT": {
+      "ACCOUNT": 0,
+      "CANCEL": 0,
+      "CONTACT": 1994,
+      "DELIVERY": 0,
+      "FEEDBACK": 3,
+      "INVOICE": 0,
+      "ORDER": 1,
+      "PAYMENT": 1,
+      "REFUND": 0,
+      "SHIPPING": 0,
+      "SUBSCRIPTION": 0
+    },
+    "DELIVERY": {
+      "ACCOUNT": 0,
+      "CANCEL": 0,
+      "CONTACT": 0,
+      "DELIVERY": 1855,
+      "FEEDBACK": 0,
+      "INVOICE": 0,
+      "ORDER": 85,
+      "PAYMENT": 0,
+      "REFUND": 0,
+      "SHIPPING": 54,
+      "SUBSCRIPTION": 0
+    },
+    "FEEDBACK": {
+      "ACCOUNT": 0,
+      "CANCEL": 0,
+      "CONTACT": 0,
+      "DELIVERY": 0,
+      "FEEDBACK": 1995,
+      "INVOICE": 0,
+      "ORDER": 1,
+      "PAYMENT": 0,
+      "REFUND": 0,
+      "SHIPPING": 1,
+      "SUBSCRIPTION": 0
+    },
+    "INVOICE": {
+      "ACCOUNT": 0,
+      "CANCEL": 0,
+      "CONTACT": 0,
+      "DELIVERY": 6,
+      "FEEDBACK": 5,
+      "INVOICE": 1984,
+      "ORDER": 2,
+      "PAYMENT": 0,
+      "REFUND": 1,
+      "SHIPPING": 1,
+      "SUBSCRIPTION": 0
+    },
+    "ORDER": {
+      "ACCOUNT": 3,
+      "CANCEL": 0,
+      "CONTACT": 0,
+      "DELIVERY": 14,
+      "FEEDBACK": 1,
+      "INVOICE": 1,
+      "ORDER": 3961,
+      "PAYMENT": 0,
+      "REFUND": 4,
+      "SHIPPING": 4,
+      "SUBSCRIPTION": 0
+    },
+    "PAYMENT": {
+      "ACCOUNT": 3,
+      "CANCEL": 0,
+      "CONTACT": 0,
+      "DELIVERY": 1,
+      "FEEDBACK": 0,
+      "INVOICE": 0,
+      "ORDER": 1,
+      "PAYMENT": 1993,
+      "REFUND": 0,
+      "SHIPPING": 0,
+      "SUBSCRIPTION": 0
+    },
+    "REFUND": {
+      "ACCOUNT": 0,
+      "CANCEL": 0,
+      "CONTACT": 0,
+      "DELIVERY": 11,
+      "FEEDBACK": 0,
+      "INVOICE": 0,
+      "ORDER": 1,
+      "PAYMENT": 0,
+      "REFUND": 2979,
+      "SHIPPING": 0,
+      "SUBSCRIPTION": 1
+    },
+    "SHIPPING": {
+      "ACCOUNT": 3,
+      "CANCEL": 0,
+      "CONTACT": 0,
+      "DELIVERY": 0,
+      "FEEDBACK": 0,
+      "INVOICE": 0,
+      "ORDER": 1,
+      "PAYMENT": 0,
+      "REFUND": 0,
+      "SHIPPING": 1966,
+      "SUBSCRIPTION": 0
+    },
+    "SUBSCRIPTION": {
+      "ACCOUNT": 0,
+      "CANCEL": 0,
+      "CONTACT": 0,
+      "DELIVERY": 0,
+      "FEEDBACK": 0,
+      "INVOICE": 0,
+      "ORDER": 1,
+      "PAYMENT": 0,
+      "REFUND": 1,
+      "SHIPPING": 0,
+      "SUBSCRIPTION": 997
+    }
+  },
+  "global_metrics": {
+    "per_class": {
+      "ACCOUNT": {
+        "precision": 0.9985,
+        "recall": 0.9983,
+        "f1_score": 0.9984,
+        "tp": 5976,
+        "fp": 9,
+        "fn": 10
+      },
+      "CANCEL": {
+        "precision": 1.0,
+        "recall": 0.9958,
+        "f1_score": 0.9979,
+        "tp": 946,
+        "fp": 0,
+        "fn": 4
+      },
+      "CONTACT": {
+        "precision": 0.9995,
+        "recall": 0.9975,
+        "f1_score": 0.9985,
+        "tp": 1994,
+        "fp": 1,
+        "fn": 5
+      },
+      "DELIVERY": {
+        "precision": 0.9825,
+        "recall": 0.9303,
+        "f1_score": 0.9557,
+        "tp": 1855,
+        "fp": 33,
+        "fn": 139
+      },
+      "FEEDBACK": {
+        "precision": 0.9955,
+        "recall": 0.999,
+        "f1_score": 0.9973,
+        "tp": 1995,
+        "fp": 9,
+        "fn": 2
+      },
+      "INVOICE": {
+        "precision": 0.999,
+        "recall": 0.9925,
+        "f1_score": 0.9957,
+        "tp": 1984,
+        "fp": 2,
+        "fn": 15
+      },
+      "ORDER": {
+        "precision": 0.9763,
+        "recall": 0.9932,
+        "f1_score": 0.9847,
+        "tp": 3961,
+        "fp": 96,
+        "fn": 27
+      },
+      "PAYMENT": {
+        "precision": 0.9955,
+        "recall": 0.9975,
+        "f1_score": 0.9965,
+        "tp": 1993,
+        "fp": 9,
+        "fn": 5
+      },
+      "REFUND": {
+        "precision": 0.998,
+        "recall": 0.9957,
+        "f1_score": 0.9968,
+        "tp": 2979,
+        "fp": 6,
+        "fn": 13
+      },
+      "SHIPPING": {
+        "precision": 0.9704,
+        "recall": 0.998,
+        "f1_score": 0.984,
+        "tp": 1966,
+        "fp": 60,
+        "fn": 4
+      },
+      "SUBSCRIPTION": {
+        "precision": 0.999,
+        "recall": 0.998,
+        "f1_score": 0.9985,
+        "tp": 997,
+        "fp": 1,
+        "fn": 2
+      }
+    },
+    "accuracy": 0.9916,
+    "macro_f1": 0.9913
+  },
+  "classes": [
+    "ACCOUNT",
+    "CANCEL",
+    "CONTACT",
+    "DELIVERY",
+    "FEEDBACK",
+    "INVOICE",
+    "ORDER",
+    "PAYMENT",
+    "REFUND",
+    "SHIPPING",
+    "SUBSCRIPTION"
+  ]
+}
