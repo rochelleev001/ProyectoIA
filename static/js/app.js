@@ -147,7 +147,7 @@ async function submitTicket() {
     return;
   }
 
-  // estado de carga
+  // Estado de carga
   setSubmitLoading(true);
   hideAllResults();
 
@@ -194,21 +194,29 @@ function resetForm() {
 function showResult(data) {
   const info = getCategoryInfo(data.category);
 
-  // ticket ID y timestamp
+  // Ticket ID y timestamp
   document.getElementById('ticketIdDisplay').textContent = data.ticket_id || '—';
   document.getElementById('ticketTimestamp').textContent = formatTimestamp(data.timestamp);
 
-  // categoría principal
+  // Resumen del ticket (subject + description)
+  document.getElementById('summarySubject').textContent =
+    data.subject && data.subject !== 'Sin asunto' ? data.subject : '(Sin asunto)';
+  document.getElementById('summaryDescription').textContent = data.description || '—';
+
+  // Categoría principal
   document.getElementById('predictedCategory').textContent  = `${info.icon} ${data.category}`;
   document.getElementById('categoryDescription').textContent = info.desc;
 
-  // tokens procesados
+  // Departamento enrutado
+  document.getElementById('metaDepartment').textContent = info.label;
+
+  // Tokens procesados
   document.getElementById('tokensCount').textContent = data.tokens_count ?? '—';
 
-  // barras de confianza
+  // Barras de confianza
   renderConfidenceBars(data.probabilities, data.category);
 
-  // mostrar panel
+  // Mostrar panel
   document.getElementById('resultEmpty').classList.add('hidden');
   document.getElementById('resultContent').classList.remove('hidden');
 }
@@ -217,7 +225,7 @@ function renderConfidenceBars(probabilities, topCategory) {
   const container = document.getElementById('confidenceBars');
   container.innerHTML = '';
 
-  // ordenar de mayor a menor
+  // Ordenar de mayor a menor
   const sorted = Object.entries(probabilities).sort((a, b) => b[1] - a[1]);
 
   sorted.forEach(([cls, prob]) => {
@@ -239,7 +247,7 @@ function renderConfidenceBars(probabilities, topCategory) {
     container.appendChild(row);
   });
 
-  // animar barras con un pequeño delay
+  // Animar barras con un pequeño delay
   requestAnimationFrame(() => {
     document.querySelectorAll('.conf-bar-fill[data-target]').forEach(bar => {
       setTimeout(() => {
@@ -328,7 +336,7 @@ async function loadMetrics() {
   }
 }
 
-// ── cards globales ──
+// ── Cards globales ──
 
 function renderGlobalCards(data) {
   const container = document.getElementById('globalCards');
@@ -347,7 +355,7 @@ function renderGlobalCards(data) {
   `).join('');
 }
 
-// ── tabla de métricas por clase ──
+// ── Tabla de métricas por clase ──
 
 function renderClassMetricsTable(data) {
   const tbody = document.getElementById('classMetricsBody');
@@ -375,7 +383,7 @@ function metricCell(val) {
   `;
 }
 
-// ── folds grid ──
+// ── Folds grid ──
 
 function renderFoldsGrid(data) {
   const container = document.getElementById('foldsGrid');
@@ -389,7 +397,7 @@ function renderFoldsGrid(data) {
   `).join('');
 }
 
-// ── matriz de confusión ──
+// ── Matriz de confusión ──
 
 function renderConfusionMatrix(data) {
   const container = document.getElementById('confusionMatrix');
@@ -401,14 +409,14 @@ function renderConfusionMatrix(data) {
     return;
   }
 
-  // encontrar valor máximo para normalizar colores
+  // Encontrar valor máximo para normalizar colores
   let maxVal = 0;
   classes.forEach(r => classes.forEach(c => {
     const v = (matrix[r] || {})[c] || 0;
     if (v > maxVal) maxVal = v;
   }));
 
-  // encabezado de columnas
+  // Encabezado de columnas
   let html = '<div class="cm-row">';
   html += `<div class="cm-cell header" title="Real \\ Predicho">Real↓ / Pred→</div>`;
   classes.forEach(c => {
@@ -416,7 +424,7 @@ function renderConfusionMatrix(data) {
   });
   html += '</div>';
 
-  // filas
+  // Filas
   classes.forEach(rowCls => {
     html += '<div class="cm-row">';
     html += `<div class="cm-cell row-header" title="${rowCls}">${rowCls.substring(0, 7)}</div>`;
