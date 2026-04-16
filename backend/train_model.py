@@ -103,3 +103,109 @@ def load_dataset_from_csv(filepath: str):
     print(f"  Dataset cargado desde CSV: {len(texts):,} instancias.")
     return texts, labels
 
+
+def print_dataset_stats(labels: list, classes: list):
+    """Imprime estadísticas del dataset."""
+    print(f"\n  {'─'*50}")
+    print(f"  ESTADÍSTICAS DEL DATASET")
+    print(f"  {'─'*50}")
+    print(f"  Total de instancias : {len(labels):,}")
+    print(f"  Número de clases    : {len(classes)}")
+    print(f"\n  Distribución por clase:")
+    from collections import Counter
+    counts = Counter(labels)
+    for cls in sorted(classes):
+        pct = counts[cls] / len(labels) * 100
+        bar = '█' * int(pct / 2)
+        print(f"    {cls:<20} {counts[cls]:>5,}  ({pct:5.1f}%)  {bar}")
+    print(f"  {'─'*50}\n")
+
+
+def main():
+    parser = argparse.ArgumentParser(description='Entrenar clasificador Naïve Bayes')
+    parser.add_argument('--csv',    type=str, default=None, help='Ruta a CSV local (opcional)')
+    parser.add_argument('--sample', type=int, default=None, help='Número de muestras (para pruebas rápidas)')
+    parser.add_argument('--k',      type=int, default=5,    help='Número de folds (default: 5)')
+    args = parser.parse_args()
+
+    print("\n" + "="*60)
+    print("  CLASIFICADOR NAÏVE BAYES — MESA DE AYUDA")
+    print("  Universidad Rafael Landívar | IA 2026")
+    print("="*60)
+
+    # --------------------
+    # 1. Cargar dataset
+    # --------------------
+    print("\n[1/4] Cargando dataset...")
+    t0 = time.time()
+
+    if args.csv:
+        texts, labels = load_dataset_from_csv(args.csv)
+    else:
+        texts, labels = load_dataset_from_huggingface(sample_size=args.sample)
+
+    classes = sorted(list(set(labels)))
+    print(f"  Dataset cargado en {time.time() - t0:.1f}s")
+    print_dataset_stats(labels, classes)
+
+    # --------------------
+    # 2. Preprocesamiento
+    # -------------------
+    print("[2/4] Preprocesando textos...")
+    t1 = time.time()
+
+    processed_docs = []
+    total = len(texts)
+    for i, text in enumerate(texts):
+        tokens = preprocess(text)
+        processed_docs.append(tokens)
+        if (i + 1) % 1000 == 0 or (i + 1) == total:
+            pct = (i + 1) / total * 100
+            print(f"  Procesados: {i+1:,}/{total:,} ({pct:.1f}%)", end='\r')
+
+    print(f"\n  Preprocesamiento completado en {time.time() - t1:.1f}s")
+
+    # estadísticas de tokens
+    all_tokens = [t for doc in processed_docs for t in doc]
+    vocab = set(all_tokens)
+    avg_len = sum(len(doc) for doc in processed_docs) / len(processed_docs)
+    print(f"  Vocabulario único  : {len(vocab):,} palabras")
+    print(f"  Promedio tokens/doc: {avg_len:.1f}")
+
+    # -----------------------------
+    # 3. K-folds cross validation
+    # -----------------------------
+    print(f"\n[3/4] Evaluando con K-Folds Cross Validation (K={args.k})...")
+    t2 = time.time()
+
+    cv_results = k_folds_cross_validation(processed_docs, labels, k=args.k)
+
+    print(f"\n  Métricas por clase (promedio de {args.k} folds):")
+    print(f"  {'Clase':<25} {'Precisión':>10} {'Recall':>10} {'F1-Score':>10}")
+    print(f"  {'─'*55}")
+    for cls, m in cv_results['avg_per_class'].items():
+        print(f"  {cls:<25} {m['precision']:>10.4f} {m['recall']:>10.4f} {m['f1_score']:>10.4f}")
+    print(f"  {'─'*55}")
+    print(f"  {'Accuracy promedio':<25} {cv_results['avg_accuracy']:>10.4f}")
+    print(f"  {'Macro F1 promedio':<25} {cv_results['avg_macro_f1']:>10.4f}")
+    print(f"  {'Desv. estándar Acc':<25} ±{cv_results['std_accuracy']:>9.4f}")
+    print(f"\n  K-Folds completado en {time.time() - t2:.1f}s")
+
+    # ------------------------------------
+    # 4. Entrenar modelo final y guardar 
+    # ------------------------------------
+    print("\n[4/4] Entrenando modelo final y guardando...")
+    t3 = time.time()
+
+    final_model = train_final_model(processed_docs, labels)
+
+    save_model(final_model)
+    save_training_results(cv_results)
+
+    print(f"\n  Proceso completo en {time.time() - t0:.1f}s total")
+    print("\n  ✓ Modelo listo para usar.")
+    print("  ✓ Ejecuta 'python app.py' para iniciar el servidor web.\n")
+
+
+if __name__ == '__main__':
+    main()
