@@ -35,7 +35,7 @@
   <main id="view-ticket" class="view active">
     <div class="page-layout">
 
-      <!-- PANEL IZQUIERDO: Formulario -->
+      <!-- PANEL IZQ: Formulario -->
       <section class="form-panel">
         <div class="panel-header">
           <h1 class="panel-title">Nueva Solicitud de Soporte</h1>
@@ -101,6 +101,19 @@
             <span class="ticket-timestamp" id="ticketTimestamp">—</span>
           </div>
 
+          <!-- Resumen del ticket enviado -->
+          <div class="ticket-summary-card">
+            <div class="ticket-summary-row">
+              <span class="ts-label">📋 Asunto</span>
+              <span class="ts-value" id="summarySubject">—</span>
+            </div>
+            <div class="ticket-summary-divider"></div>
+            <div class="ticket-summary-row ticket-summary-desc">
+              <span class="ts-label">📝 Descripción</span>
+              <span class="ts-value ts-desc" id="summaryDescription">—</span>
+            </div>
+          </div>
+
           <!-- Categoría predicha -->
           <div class="prediction-hero">
             <div class="prediction-label">Categoría Detectada</div>
@@ -123,6 +136,14 @@
             <div class="meta-item">
               <span class="meta-label">Algoritmo</span>
               <span class="meta-value">Naïve Bayes Multinomial</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Estado</span>
+              <span class="meta-value meta-status">✅ Clasificado</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Departamento</span>
+              <span class="meta-value" id="metaDepartment">—</span>
             </div>
           </div>
 
