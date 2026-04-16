@@ -53,3 +53,56 @@ def load_model(filepath: str = MODEL_PATH):
     print(f"  Clases disponibles: {sorted(model.classes)}")
     return model
 
+
+def save_training_results(results: dict, filepath: str = RESULTS_PATH):
+    """
+    Guarda los resultados del entrenamiento (métricas K-Folds) en JSON.
+    Convierte tipos no serializables para compatibilidad.
+
+    Parámetros:
+        results (dict): Resultados del K-Folds Cross Validation.
+        filepath (str): Ruta del archivo JSON.
+    """
+    os.makedirs(os.path.dirname(filepath), exist_ok=True)
+
+    # Convertir a tipos JSON-serializables
+    def convert(obj):
+        if isinstance(obj, (int, float, str, bool, type(None))):
+            return obj
+        if isinstance(obj, dict):
+            return {k: convert(v) for k, v in obj.items()}
+        if isinstance(obj, (list, tuple)):
+            return [convert(i) for i in obj]
+        return str(obj)
+
+    serializable_results = convert(results)
+
+    with open(filepath, 'w', encoding='utf-8') as f:
+        json.dump(serializable_results, f, indent=2, ensure_ascii=False)
+    print(f"  Resultados guardados en: {filepath}")
+
+
+def load_training_results(filepath: str = RESULTS_PATH) -> dict:
+    """
+    Carga los resultados del entrenamiento desde JSON.
+
+    Parámetros:
+        filepath (str): Ruta del archivo JSON.
+
+    Retorna:
+        dict: Resultados del entrenamiento.
+    """
+    if not os.path.exists(filepath):
+        return None
+    with open(filepath, 'r', encoding='utf-8') as f:
+        return json.load(f)
+
+
+def model_exists(filepath: str = MODEL_PATH) -> bool:
+    """
+    Verifica si el modelo entrenado existe.
+
+    Retorna:
+        bool: True si el modelo existe.
+    """
+    return os.path.exists(filepath)
